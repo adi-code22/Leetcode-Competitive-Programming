@@ -6,6 +6,7 @@
 
 // @lc code=start
 class MyCalendar {
+set<int> set;
 public:
     MyCalendar() {
        
@@ -13,17 +14,21 @@ public:
     }
     
     bool book(int start, int end) {
-        if(start == 0 || end == 0){
-            return null;
-        }
-        else{
-            set<int> set;
-            if(set.contain(start) ) return false;
+        // if(start == 0 || end == 0){
+        //     return NULL;
+        // }
+        
+            
+            if(set.count(start)  || set.count(end-1)  ) return false;
             for(int i=start; i<end; i++){
                 set.insert(i);
             }
+            for(auto i: set){
+                cout<<i<<" ";
+            }
+            cout<<"end===>";
             return true;
-        }
+        
     }
 };
 
